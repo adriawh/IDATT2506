@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Oving4</string>
+    <string name="previous">previous</string>
+    <string name="next">next</string>
+
+    <string name="movie1">Insomnia</string>
+    <string name="movie1description">Two Los Angeles homicide detectives are dispatched to a
+        northern town where the sun doesn\'t set to investigate the methodical murder of a local
+        teen.
+    </string>
+
+    <string name="movie2">Batman begins</string>
+    <string name="movie2description">After training with his mentor, Batman begins his fight
+        to free crime-ridden Gotham City from corruption.
+    </string>
+
+    <string name="movie3">The prestige</string>
+    <string name="movie3description">After a tragic accident, two stage magicians in 1890s London
+        engage in a battle to create the ultimate illusion while sacrificing everything they have to outwit each other.
+    </string>
+
+    <string name="movie4">The dark knight</string>
+    <string name="movie4description">When the menace known as the Joker wreaks havoc and chaos on
+        the people of Gotham, Batman must accept one of the greatest psychological and physical tests
+        of his ability to fight injustice.
+    </string>
+
+
+    <string name="movie5">Inception</string>
+    <string name="movie5description">A thief who steals corporate secrets through the use of
+        dream-sharing technology is given the inverse task of planting an idea into the mind of a
+        C.E.O., but his tragic past may doom the project and his team to disaster.
+    </string>
+
+
+    <string-array name="movies">
+        <item>@string/movie1</item>
+        <item>@string/movie2</item>
+        <item>@string/movie3</item>
+        <item>@string/movie4</item>
+        <item>@string/movie5</item>
+    </string-array>
+    <string-array name="movieDescriptions">
+        <item>@string/movie1description</item>
+        <item>@string/movie2description</item>
+        <item>@string/movie3description</item>
+        <item>@string/movie4description</item>
+        <item>@string/movie5description</item>
+    </string-array>
+    <array name="movieImages">
+        <item>@drawable/insomnia</item>
+        <item>@drawable/batman_begins</item>
+        <item>@drawable/the_prestige</item>
+        <item>@drawable/the_dark_knight</item>
+        <item>@drawable/inception</item>
+    </array>
+
+</resources>

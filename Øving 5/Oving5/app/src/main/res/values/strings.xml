@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Oving5</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="register">Registrer navn og kortnummer</string>
+    <string name="playHeader">Gjett et tall</string>
+    <string name="name">Navn</string>
+    <string name="card">Kort</string>
+    <string name="submit">Send</string>
+    <string name="bet">Spill</string>
+    <string name="restart">Restart</string>
+</resources>
