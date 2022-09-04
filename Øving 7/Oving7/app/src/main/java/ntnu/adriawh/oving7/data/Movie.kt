@@ -1,3 +1,7 @@
-package ntnu.adriawh.oving7
+package ntnu.adriawh.oving7.data
 
-data class Movie()
+data class Movie(
+  var title: String,
+  var director: String,
+  var actors: List<String>
+)

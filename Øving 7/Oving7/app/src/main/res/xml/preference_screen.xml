@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-  
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ListPreference
+        app:defaultValue="@string/color_default_value"
+        app:entries="@array/color_entries"
+        app:entryValues="@array/color_values"
+        app:icon="@drawable/settings_icon"
+        app:key="@string/color"
+        app:title="@string/color_title"
+        app:useSimpleSummaryProvider="true" />
 </PreferenceScreen>

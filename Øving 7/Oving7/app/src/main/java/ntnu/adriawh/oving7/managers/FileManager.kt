@@ -1,55 +1,67 @@
-package inft2501.leksjon_07.managers
+package ntnu.adriawh.oving7.managers
 
+import android.app.Activity
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import ntnu.adriawh.oving7.data.Movie
+import ntnu.adriawh.oving7.service.Database
 import java.io.*
 
-/**
- * Just contains basic code snippets relevant for reading from/to different files
- */
-class FileManager(private val activity: AppCompatActivity) {
+class FileManager(private val activity: Activity) {
 
-	private val filename: String = "filename.txt"
-
+	private val filename: String = "newFile.txt"
 	private var dir: File = activity.filesDir
 	private var file: File = File(dir, filename)
 
-	private var externalDir: File? = activity.getExternalFilesDir(null)
-	private var externalFile = File(externalDir, filename)
-
-
-	fun write(str: String) {
+	private fun write(str: String) {
 		PrintWriter(file).use { writer ->
 			writer.println(str)
 		}
 	}
 
-	fun readLine(): String? {
-		BufferedReader(FileReader(file)).use { reader ->
-			return reader.readLine()
+	fun writeDatabaseToTxt(database: Database){
+		Log.d("New file filepath", file.absolutePath)
+		Log.d("Filemanager", "writing to file ${file.name}")
+		val string = StringBuffer("")
+		for(movie in database.allMovies){
+			string.append(movie + "\n")
+			for(director in database.getDirectorsByMovie(movie)){
+				string.append( director + "\n")
+			}
+			for(actor in database.getActorsByMovie(movie)){
+				string.append(actor)
+				if(actor != database.getActorsByMovie(movie)[database.getActorsByMovie(movie).size-1]){
+					string.append(", ")
+				}
+			}
+			string.append("\n\n")
 		}
+		write(string.toString())
 	}
 
-	/**
-	 * Open file: *res/raw/id.txt*
-	 *
-	 * @param fileId R.raw.filename
-	 */
-	private fun readFileFromResFolder(fileId: Int): String {
-		val content = StringBuffer("")
+	fun readMoviesFileFromResFolder(fileId: Int):ArrayList<Movie>{
+ 		val movies = ArrayList<Movie>()
 		try {
 			val inputStream: InputStream = activity.resources.openRawResource(fileId)
-			val reader = BufferedReader(InputStreamReader(inputStream)).use { reader ->
-				var line = reader.readLine()
-				while (line != null) {
-					content.append(line)
-					content.append("\n")
-					line = reader.readLine()
+			BufferedReader(InputStreamReader(inputStream)).use { reader ->
+				var title = reader.readLine()
+				var director = reader.readLine()
+				var actors = reader.readLine().split(", ")
+				reader.readLine()
+				while(title != null){
+					movies.add(Movie(title, director, actors))
+					title = reader.readLine()
+					if(title != null){
+						director = reader.readLine()
+						actors = reader.readLine().split(", ")
+					}
+					reader.readLine()
 				}
-
 			}
 		} catch (e: IOException) {
 			e.printStackTrace()
 		}
-		return content.toString()
+
+		return movies
 	}
 }

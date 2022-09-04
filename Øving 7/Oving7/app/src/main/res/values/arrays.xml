@@ -1,3 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <string-array name="color_entries">
+        <item>Hvit</item>
+        <item>Rød</item>
+        <item>Blå</item>
+    </string-array>
+    <string-array name="color_values">
+        <item>#FFFFFF</item>
+        <item>#FF0000</item>
+        <item>#0000FF</item>
+    </string-array>
+
+
 </resources>
