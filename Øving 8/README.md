@@ -1,16 +1,14 @@
-# to_do
+# Kjøring av applikasjon
 
-A new Flutter project.
 
-## Getting Started
+For å kunne teste applikasjonen må man ha satt opp en android emulator og installert Flutter. Dette kan gjøres ved å følge følgende gjennomgang: https://docs.flutter.dev/get-started/install
 
-This project is a starting point for a Flutter application.
+Start så emulatoren.
 
-A few resources to get you started if this is your first Flutter project:
+Etter å ha satt opp dette kjøres applikasjonen ved å navigere til «to_do» mappen i terminalen og kjøre følgende kommando:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+flutter run lib/main.dart
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Under testing har jeg brukt en Pixel 5 emulator med API 32.
